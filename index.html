@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sidebar</title>
+</head>
+<body>
+    <div class="menuToggle"></div>
+    <div class="sidebar">
+        <ul>
+            <li class="logo" style="--bg:#333;">
+                <a href="">
+                    <div class="icon"><ion-icon name="logo-apple"></ion-icon></div>
+                    <div class="text">Website Logo</div>
+                </a>
+            </li>
+            <div class="menuList">
+                <li style="--bg:#ffa117;" class="active">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="home"></ion-icon></div>
+                        <div class="text">Home</div>
+                    </a>
+                </li>
+                <li style="--bg:#0fc70f;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="chatbubbles"></ion-icon></div>
+                        <div class="text">Inbox</div>
+                    </a>
+                </li>
+                <li style="--bg:#2196f3;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="barcode"></ion-icon></div>
+                        <div class="text">Analytic</div>
+                    </a>
+                </li>
+                <li style="--bg:#b145e9;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="cart"></ion-icon></div>
+                        <div class="text">Order</div>
+                    </a>
+                </li>
+                <li style="--bg:#e91e63;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="settings"></ion-icon></div>
+                        <div class="text">Setting</div>
+                    </a>
+                </li>
+            </div>
+            <div class="bottom">
+                <li style="--bg:#333;">
+                    <a href="#">
+                        <div class="icon">
+                            <div class="imgBx">
+                                <img src="./img/vk.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="text">Virat Kohli</div>
+                    </a>
+                </li>
+                <li style="--bg:#333;">
+                    <a href="">
+                        <div class="icon"><ion-icon name="log-out"></ion-icon></div>
+                        <div class="text">Logout</div>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+        let menuToggle = document.querySelector('.menuToggle');
+        let sidebar = document.querySelector('.sidebar');
+        menuToggle.onclick = function() {
+            menuToggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+
+        let Menulist = document.querySelectorAll('.menuList li');
+        function activeLink() {
+            Menulist.forEach((item)=>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+
+        Menulist.forEach((item)=>
+        item.addEventListener('click',activeLink));
+    </script>
+</body>
+</html>
